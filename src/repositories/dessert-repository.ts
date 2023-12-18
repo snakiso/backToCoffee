@@ -52,12 +52,8 @@ type DessertDBType = {
     additives: DessertAdditivesType
     image: string
 }
-export type DessertSizeType = {
-    small: SizeType
-    medium: SizeType
-    large: SizeType
-}
-type SizeType = { volume: number, price: number }
+export type DessertSizeType = SizeType[]
+type SizeType = { size: string, volume: number, price: number }
 
 export type DessertAdditivesType = AdditivesType[]
 

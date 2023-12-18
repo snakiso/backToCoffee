@@ -17,6 +17,7 @@ export class CoffeeRepository {
         })
         return allCoffee
     }
+
     async getCoffeeById(id: string): Promise<CoffeeViewType | null> {
         const coffee = await client.db(dataBaseName)
             .collection<CoffeeDBType>('coffee').findOne({_id: new ObjectId(id)})
@@ -30,13 +31,15 @@ export class CoffeeRepository {
             image: coffee.image
         }
     }
+
     async createCoffee(name: string, description: string, size: CoffeeSizeType, additives: CoffeeAdditivesType, image: string): Promise<boolean> {
         const result = await client.db(dataBaseName)
             .collection<CoffeeDBType>('coffee')
             .insertOne({_id: new ObjectId(), name, description, size, additives, image})
         return result.acknowledged
     }
-    async updateCoffee(coffeeId:string,name: string, description: string, size: CoffeeSizeType, additives: CoffeeAdditivesType, image: string): Promise<boolean> {
+
+    async updateCoffee(coffeeId: string, name: string, description: string, size: CoffeeSizeType, additives: CoffeeAdditivesType, image: string): Promise<boolean> {
         const result = await client.db(dataBaseName)
             .collection<CoffeeDBType>('coffee')
             .updateOne({_id: new ObjectId(coffeeId)}, {$set: {name, description, size, additives, image}})
@@ -52,15 +55,11 @@ type CoffeeDBType = {
     additives: CoffeeAdditivesType
     image: string
 }
-export type CoffeeSizeType = {
-    small: SizeType
-    medium: SizeType
-    large: SizeType
-}
-type SizeType = {volume: number, price: number }
+export type CoffeeSizeType = SizeType[]
+type SizeType = { size: string, volume: number, price: number }
 export type CoffeeAdditivesType = AdditivesType[]
 
-type AdditivesType = {name: string, price: number}
+type AdditivesType = { name: string, price: number }
 
 export type CoffeeViewType = {
     id: string

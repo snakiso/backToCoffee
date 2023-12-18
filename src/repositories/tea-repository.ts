@@ -52,12 +52,8 @@ type TeaDBType = {
     additives: TeaAdditivesType
     image: string
 }
-export type TeaSizeType = {
-    small: SizeType
-    medium: SizeType
-    large: SizeType
-}
-type SizeType = { volume: number, price: number }
+export type TeaSizeType = SizeType[]
+type SizeType = { size: string, volume: number, price: number }
 export type TeaAdditivesType = AdditivesType[]
 type AdditivesType = {name: string, price: number }
 export type TeaViewType = {
