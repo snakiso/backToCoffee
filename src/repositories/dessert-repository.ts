@@ -58,12 +58,10 @@ export type DessertSizeType = {
     large: SizeType
 }
 type SizeType = { volume: number, price: number }
-export type DessertAdditivesType = {
-    berries: AdditivesType
-    nuts: AdditivesType
-    jam: AdditivesType
-}
-type AdditivesType = { price: number }
+
+export type DessertAdditivesType = AdditivesType[]
+
+type AdditivesType = {name: string, price: number }
 export type DessertViewType = {
     id: string
     name: string

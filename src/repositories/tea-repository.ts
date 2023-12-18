@@ -58,12 +58,8 @@ export type TeaSizeType = {
     large: SizeType
 }
 type SizeType = { volume: number, price: number }
-export type TeaAdditivesType = {
-    sugar: AdditivesType
-    lemon: AdditivesType
-    syrup: AdditivesType
-}
-type AdditivesType = { price: number }
+export type TeaAdditivesType = AdditivesType[]
+type AdditivesType = {name: string, price: number }
 export type TeaViewType = {
     id: string
     name: string
