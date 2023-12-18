@@ -59,9 +59,9 @@ export type DessertSizeType = {
 }
 type SizeType = { volume: number, price: number }
 export type DessertAdditivesType = {
-    sugar: AdditivesType
-    cinnamon: AdditivesType
-    syrup: AdditivesType
+    berries: AdditivesType
+    nuts: AdditivesType
+    jam: AdditivesType
 }
 type AdditivesType = { price: number }
 export type DessertViewType = {

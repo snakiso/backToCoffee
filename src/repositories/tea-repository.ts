@@ -60,7 +60,7 @@ export type TeaSizeType = {
 type SizeType = { volume: number, price: number }
 export type TeaAdditivesType = {
     sugar: AdditivesType
-    cinnamon: AdditivesType
+    lemon: AdditivesType
     syrup: AdditivesType
 }
 type AdditivesType = { price: number }
