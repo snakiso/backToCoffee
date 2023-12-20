@@ -57,7 +57,7 @@ type SizeType = { size:number, volume: string, price: number }
 
 export type DessertAdditivesType = AdditivesType[]
 
-type AdditivesType = {name: string, price: number }
+type AdditivesType = {id: number, name: string, price: number }
 export type DessertViewType = {
     id: string
     name: string

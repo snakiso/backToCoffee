@@ -60,7 +60,7 @@ export type CoffeeSizeType = SizeType[]
 type SizeType = { size: number, volume: string, price: number }
 export type CoffeeAdditivesType = AdditivesType[]
 
-type AdditivesType = { name: string, price: number }
+type AdditivesType = {id: number, name: string, price: number }
 
 export type CoffeeViewType = {
     id: string
