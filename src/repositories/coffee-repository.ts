@@ -55,8 +55,9 @@ type CoffeeDBType = {
     additives: CoffeeAdditivesType
     image: string
 }
+
 export type CoffeeSizeType = SizeType[]
-type SizeType = { size: string, volume: number, price: number }
+type SizeType = { size: number, volume: string, price: number }
 export type CoffeeAdditivesType = AdditivesType[]
 
 type AdditivesType = { name: string, price: number }
